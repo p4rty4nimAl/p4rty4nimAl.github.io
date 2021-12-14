@@ -1,10 +1,6 @@
 function getVal(char) {
   if (!(char == undefined)) {
-    if (char.toUpperCase() == char) {
-      return char.charCodeAt(0) - 64;
-    } else {
-      return char.charCodeAt(0) - 96;
-    }
+      return char.toLowerCase().charCodeAt(0) - 96;
   }
 }
 function getChar(val) {

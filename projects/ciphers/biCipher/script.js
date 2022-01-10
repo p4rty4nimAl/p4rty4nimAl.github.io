@@ -31,7 +31,7 @@ function getChar(val) {
   return String.fromCharCode(val + 96);
 }
 function encipher() {
-  document.getElementById("output").value = reverseString(bEF(reverseString(bEF(document.getElementById("input").value))));
+  document.getElementById("output").value = reverseString(bEF(reverseString(bEF(document.getElementById("input").value)))).replaceAll("`", " ").toLowerCase();
 }
 function decipher() {
   document.getElementById("input").value = bDF(reverseString(bDF(reverseString(document.getElementById("output").value)))).replaceAll("`", " ").toLowerCase();

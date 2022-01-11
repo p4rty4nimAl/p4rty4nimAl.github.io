@@ -10,13 +10,13 @@
   <body>
     <h1>Gay (Keysmash) Cipher</h1>
     <p>
-      <textarea id="input" cols="80" rows="12" autofocus=""></textarea>
+      <textarea id="input" cols="80" rows="12" autofocus="" onkeyup="encipher()" onchange="enchiper()"></textarea>
     </p>
-    <p class="arrow">↓     ↑</p>
+    <p class="arrow">↑</p>
     <p>
-      <button id="rot" onclick="encipher()">Encipher</button> <button id="rot" onclick="decipher()">Decipher</button>
+      <button id="rot" onclick="decipher()">Decipher</button>
     </p>
-    <p class="arrow">↓     ↑</p>
+    <p class="arrow">↑</p>
     <p>
       <textarea id="output" cols="80" rows="12"></textarea>
     </p>

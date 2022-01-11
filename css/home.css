@@ -1,40 +1,26 @@
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	color: white;
+	background: linear-gradient(-90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	color: rgba(31, 31, 31, 1);
 	background-size: 400% 100%;
 	animation: gradient 30s ease infinite;
 	height: 100vh;
 	margin: 0;
 	padding: 0;
 	display: grid;
-  text-align: center;
+ 	text-align: center;
 	font-size: 25px;
 }
 input {
-    text-align: center;
-		background: rgba(31, 31, 31, 1);
+   	text-align: center;
+	background: rgba(31, 31, 31, 1);
 		color: rgba(232, 232, 232, 1);
 		font-size: 25px;
 }
 button {
-    text-align: center;
-		background: rgba(31, 31, 31, 1);
-		color: rgba(232, 232, 232, 1);
-		font-size: 25px;
-}
-input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-input[type=checkbox] {
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #000000;
+   	text-align: center;
+	background: rgba(31, 31, 31, 1);
+	color: rgba(232, 232, 232, 1);
+	font-size: 25px;
 }
 
 @keyframes gradient {

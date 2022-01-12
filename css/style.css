@@ -16,6 +16,7 @@ textarea {
   border: none;
   padding: 15px 32px;
   resize: none;
+  outline: none;
 }
 .arrow {
   font-size: 2.0em;

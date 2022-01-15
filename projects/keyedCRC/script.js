@@ -17,6 +17,7 @@ function bEF(string) {
 }
 function bDF(string) {
   output = "";
+  key = document.getElementById("key").value;
   for (i = 0; i < string.length; i++) {
     output = output + getChar(getVal(string[i]) - getVal(key[i % key.length]));
   }

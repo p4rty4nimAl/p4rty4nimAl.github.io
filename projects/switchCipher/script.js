@@ -36,7 +36,7 @@ function bDF(string) {
           )
         )
       )
-    )
+    ).replace("_", " ")
   }
   return output;
 }

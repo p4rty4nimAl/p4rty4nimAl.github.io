@@ -1,3 +1,10 @@
+/*
+ *
+ * BY: p4rty4nimAl
+ * REQUIRES:
+ *  none
+ *
+*/
 function addHex(num1, num2) {
     return toHex(toDen(num1) + toDen(num2));
 }
@@ -11,6 +18,9 @@ function divHex(num1, num2) {
   return toHex(toDen(num1) / toDen(num2));
 }
 function powHex(num1, num2) {
+  return toHex(toDen(num1) ** toDen(num2));
+}
+function xorHex(num1, num2) {
   return toHex(toDen(num1) ^ toDen(num2));
 }
 

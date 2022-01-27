@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  <title>Hashed CRC</title>
+	  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+	  <link href="/css/home.css" rel="stylesheet" type="text/css" />
+    <script src="/libs/cipherLib.js"></script>
+    <script src="/libs/hexLib.js"></script>
+    <script src="/libs/hashLib.js"></script>
+    <script src="script.js"></script>
+	</head>
+  <body>
+    <h1>Hashed CRC</h1>
+    <p>
+      <textarea id="input" cols="80" rows="12" autofocus="" onkeyup="encipher()" onchange="encipher()"></textarea>
+    </p>
+    <p class="arrow">↑</p>
+    <p>
+      <textarea class="keyArea"id="key" cols="20" rows="1" maxlength="20" placeholder="Key:"></textarea>
+    </p>
+    <p>
+      <button class="rot" onclick="decipher()">Decipher</button>
+    </p>
+    <p class="arrow">↑</p>
+    <p>
+      <textarea id="output" cols="80" rows="12"></textarea>
+    </p>
+  </body>
+</html>

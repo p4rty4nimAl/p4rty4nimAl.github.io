@@ -20,7 +20,7 @@ function combineBlocks(array) {
 }
 
 function hash(input) {
-  input = entropise(input.toString())
+  input = entropise(input.toString());
   string = combineBlocks(split(input));
   return string;
 }
@@ -43,13 +43,13 @@ function entropise(string) {
   if (string.length > 64) return string;
   inc = 1;
   for (i = 0; i < string.length; i++) {
-    cnt = cnt + getVal(string[i])
+    cnt = cnt + getVal(string[i]);
   }
   if (cnt == -32) string = string.substring(0, string.length - 2) + "a";
   for (i = string.length; string.length < 128; i++) {
     string = string + getChar(((getVal(string[i - 1]) ** 2) ^ i) + inc);
     inc = inc + (getVal(string[i]) ** 2) % 32 + i;
   }
-  if (string.includes("`````")) entropise(string)
+  if (string.includes("`````")) entropise(string);
   return string.replaceAll("\x7F", " ");
 }

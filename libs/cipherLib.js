@@ -3,7 +3,7 @@
  * BY: p4rty4nimAl
  * REQUIRES:
  *  none
- * 
+ *
 */
 function reverseString(string) {
   output = "";

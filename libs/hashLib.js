@@ -2,7 +2,7 @@
  *
  * BY: p4rty4nimAl
  * REQUIRES:
- *  hexLib.js
+ *  cipherLib.js
  *
 */
 function combineBlocks(array) {
@@ -16,15 +16,17 @@ function combineBlocks(array) {
     output.push(interm);
     interm = "";
   }
-  return output.shift();
+  return output.shift().replaceAll("\x7F", " ");
 }
 
 function hash(input) {
-  string = combineBlocks(split(input.toString()));
+  input = entropise(input.toString())
+  string = combineBlocks(split(input));
+  return string;
 }
 function split(string) {
-  while (string.length % 64 != 0) {
-    string = string + "a";
+  for (i = 0; string.length % 64 != 0; i++) {
+    string = string + string[i];
   }
   string = string + "a";
   cnt = 0;
@@ -35,4 +37,19 @@ function split(string) {
   }
   output.shift();
   return output;
+}
+function entropise(string) {
+  cnt = 0;
+  if (string.length > 64) return string;
+  inc = 1;
+  for (i = 0; i < string.length; i++) {
+    cnt = cnt + getVal(string[i])
+  }
+  if (cnt == -32) string = string.substring(0, string.length - 2) + "a";
+  for (i = string.length; string.length < 128; i++) {
+    string = string + getChar(((getVal(string[i - 1]) ** 2) ^ i) + inc);
+    inc = inc + (getVal(string[i]) ** 2) % 32 + i;
+  }
+  if (string.includes("`````")) entropise(string)
+  return string.replaceAll("\x7F", " ");
 }

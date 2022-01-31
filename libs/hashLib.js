@@ -4,7 +4,32 @@
  * REQUIRES:
  *  cipherLib.js
  *
+ * NOTE:
+ *  I, too, have no idea what the FUCK this code does, it just works
 */
+function KCRC(string, key) {
+  register = 0;
+  output = "";
+  for (i = 0; i < string.length; i++) {
+    register = (register + getVal(string[i])) % 32;
+    output = output + getChar(register);
+  }
+  string = output;
+  output = "";
+  for (i = 0; i < string.length; i++) {
+    output = output + getChar(getVal(string[i]) ^ getVal(key[i % key.length]));
+  }
+  return output;
+}
+function CRC(string) {
+  register = 0;
+  output = "";
+  for (i = 0; i < string.length; i++) {
+    register = (register + getVal(string[i])) % 32;
+    output = output + getChar(register ^ i);
+  }
+  return output;
+}
 function combineBlocks(array) {
   if (array.length == 1) return array;
   output = [];
@@ -20,9 +45,7 @@ function combineBlocks(array) {
 }
 
 function hash(input) {
-  input = entropise(input.toString());
-  string = combineBlocks(split(input));
-  return string;
+  return combineBlocks(split(entropise(input.toString()))).toLowerCase().replaceAll("\x7F", " ");
 }
 function split(string) {
   for (i = 0; string.length % 64 != 0; i++) {
@@ -40,7 +63,7 @@ function split(string) {
 }
 function entropise(string) {
   cnt = 0;
-  if (string.length > 64) return string;
+  if (string.length > 128) return string;
   inc = 1;
   for (i = 0; i < string.length; i++) {
     cnt = cnt + getVal(string[i]);
@@ -50,6 +73,7 @@ function entropise(string) {
     string = string + getChar(((getVal(string[i - 1]) ** 2) ^ i) + inc);
     inc = inc + (getVal(string[i]) ** 2) % 32 + i;
   }
-  if (string.includes("`````")) entropise(string);
-  return string.replaceAll("\x7F", " ");
+  output = "";
+  for (i = 0; i < string.length; i += 2) output += string[i];
+  return CRC(KCRC(string, output)).replaceAll("\x7F", " ").replaceAll("`", "");
 }

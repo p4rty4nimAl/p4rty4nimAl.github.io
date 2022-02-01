@@ -7,13 +7,6 @@
  * NOTE:
  *  I, too, have no idea what the FUCK this code does, it just works
 */
-/*
- *
- * BY: p4rty4nimAl
- * REQUIRES:
- *  cipherLib.js
- *
-*/
 function combineBlocks(array) {
   if (array.length == 1) return array;
   output = [];

@@ -1,0 +1,2 @@
+what if *key* key before hashing of key
+hashes would be further

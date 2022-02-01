@@ -7,29 +7,13 @@
  * NOTE:
  *  I, too, have no idea what the FUCK this code does, it just works
 */
-function KCRC(string, key) {
-  register = 0;
-  output = "";
-  for (i = 0; i < string.length; i++) {
-    register = (register + getVal(string[i])) % 32;
-    output = output + getChar(register);
-  }
-  string = output;
-  output = "";
-  for (i = 0; i < string.length; i++) {
-    output = output + getChar(getVal(string[i]) ^ getVal(key[i % key.length]));
-  }
-  return output;
-}
-function CRC(string) {
-  register = 0;
-  output = "";
-  for (i = 0; i < string.length; i++) {
-    register = (register + getVal(string[i])) % 32;
-    output = output + getChar(register ^ i);
-  }
-  return output;
-}
+/*
+ *
+ * BY: p4rty4nimAl
+ * REQUIRES:
+ *  cipherLib.js
+ *
+*/
 function combineBlocks(array) {
   if (array.length == 1) return array;
   output = [];
@@ -45,7 +29,7 @@ function combineBlocks(array) {
 }
 
 function hash(input) {
-  return combineBlocks(split(entropise(input.toString()))).toLowerCase().replaceAll("\x7F", " ");
+  return combineBlocks(split(entropise(input.toString())));
 }
 function split(string) {
   for (i = 0; string.length % 64 != 0; i++) {
@@ -62,18 +46,21 @@ function split(string) {
   return output;
 }
 function entropise(string) {
-  cnt = 0;
   if (string.length > 128) return string;
   inc = 1;
+  cnt = 0;
+  test = 0;
+  for (i = 0; i < string.length; i += 2) {
+    test += getVal(string[i]);
+  }
   for (i = 0; i < string.length; i++) {
     cnt = cnt + getVal(string[i]);
   }
   if (cnt == -32) string = string.substring(0, string.length - 2) + "a";
   for (i = string.length; string.length < 128; i++) {
-    string = string + getChar(((getVal(string[i - 1]) ** 2) ^ i) + inc);
+    string = string + getChar(((getVal(string[i - 1]) ** 2) ^ (i ** 3) % 17) + inc * test);
     inc = inc + (getVal(string[i]) ** 2) % 32 + i;
   }
-  output = "";
-  for (i = 0; i < string.length; i += 2) output += string[i];
-  return CRC(KCRC(string, output)).replaceAll("\x7F", " ").replaceAll("`", "");
+  if (string.includes("`````")) console.log(entropise(string.replaceAll("`", "")));
+  return string.replaceAll("\x7F", " ");
 }

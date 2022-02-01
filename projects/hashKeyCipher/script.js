@@ -14,7 +14,6 @@ function bEF(string) {
   return output;
 }
 function bDF(string) {
-  string = string.replaceAll(" ", "\x7F");
   output = "";
   key = hash(document.getElementById("key").value);
   for (i = 0; i < string.length; i++) {

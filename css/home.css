@@ -1,8 +1,8 @@
 body {
-	background: linear-gradient(-90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(135deg, #FF8800CC, rgba(95, 95, 63, 1), #00BB0088, rgba(63, 95, 95, 1), #0000DDDD);
 	color: rgba(31, 31, 31, 1);
-	background-size: 400% 100%;
-	animation: gradient 30s ease infinite;
+	background-size: 300% 100%;
+	animation: gradient 20s ease infinite;
 	height: 100vh;
 	margin: 0;
 	padding: 0;

@@ -11,8 +11,8 @@ textarea {
   color: rgba(232, 232, 232, 1);
   border-radius: 40px;
   background: linear-gradient(145deg, #1c1c1c, #212121);
-  box-shadow:  5px 5px 20px #151515,
-              -5px -5px 20px #292929;
+  box-shadow:  2px 2px 4px #1a1a1a,
+               -2px -2px 4px #242424;
   border: none;
   padding: 15px 32px;
   resize: none;
@@ -31,8 +31,8 @@ textarea {
 .rot {
   border-radius: 40px;
   background: linear-gradient(145deg, #1c1c1c, #212121);
-  box-shadow:  5px 5px 20px #151515,
-              -5px -5px 20px #292929;
+  box-shadow:  2px 2px 4px #1a1a1a,
+               -2px -2px 4px #242424;
   border: none;
   color: white;
   padding: 15px 32px;

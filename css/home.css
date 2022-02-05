@@ -10,6 +10,9 @@ body {
  	text-align: center;
 	font-size: 25px;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 input {
    	text-align: center;
 	background: rgba(31, 31, 31, 1);

@@ -14,6 +14,30 @@ body {
   background-size: 300% 100%;
   animation: gradient 20s ease infinite;
 }
+.side-by-side {
+  display: inline;
+}
+.bar {
+  background: #111111;
+  height: 5vh;
+	border-radius: 3px;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+input {
+   	text-align: center;
+	background: rgba(31, 31, 31, 1);
+		color: rgba(232, 232, 232, 1);
+		font-size: 25px;
+}
+button {
+   	text-align: center;
+	background: rgba(31, 31, 31, 1);
+	color: rgba(232, 232, 232, 1);
+	font-size: 25px;
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -25,10 +49,6 @@ body {
 		background-position: 0% 50%;
 	}
 }
-.side-by-side {
-  display: inline;
-}
-.bar {
-  background: #FF44FF;
-  height: 5vh;
+.page {
+  height: 95vh;
 }

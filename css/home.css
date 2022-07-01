@@ -14,13 +14,13 @@ body::-webkit-scrollbar {
   display: none;
 }
 input {
-   	text-align: center;
+  text-align: center;
 	background: rgba(31, 31, 31, 1);
-		color: rgba(232, 232, 232, 1);
-		font-size: 25px;
+	color: rgba(232, 232, 232, 1);
+	font-size: 25px;
 }
 button {
-   	text-align: center;
+  text-align: center;
 	background: rgba(31, 31, 31, 1);
 	color: rgba(232, 232, 232, 1);
 	font-size: 25px;

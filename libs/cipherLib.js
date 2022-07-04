@@ -18,9 +18,17 @@ function getVal(char) {
 function getChar(val) {
   return String.fromCharCode((val % 32) + 96);
 }
-function encipher() {
-  document.getElementById("output").value = reverseString(bEF(reverseString(bEF(document.getElementById("input").value)))).replaceAll("`", " ").toLowerCase();
+function encipher(keepCase) {
+  if (keepCase) {
+    document.getElementById("output").value = reverseString(bEF(reverseString(bEF(document.getElementById("input").value)))).replaceAll("`", " ");
+  } else {
+    document.getElementById("output").value = reverseString(bEF(reverseString(bEF(document.getElementById("input").value)))).replaceAll("`", " ").toLowerCase();
+  }
 }
-function decipher() {
-  document.getElementById("input").value = bDF(reverseString(bDF(reverseString(document.getElementById("output").value)))).replaceAll("`", " ").toLowerCase();
+function decipher(keepCase) {
+  if (keepCase) {
+    document.getElementById("input").value = bDF(reverseString(bDF(reverseString(document.getElementById("output").value)))).replaceAll("`", " ");
+  } else {
+    document.getElementById("input").value = bDF(reverseString(bDF(reverseString(document.getElementById("output").value)))).replaceAll("`", " ").toLowerCase();
+  }
 }

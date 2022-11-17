@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{Eb7j:function(o,n){"use strict";n.a={portfolio:"portfolio__Cz5s5"}},lu10:function(o,n,s){"use strict";s.r(n),function(o){var t=s("hosL"),i=s("Eb7j");s("ox/y");n.default=class extends t.Component{render(){return o("div",{class:i.a.portfolio},o("p",null,"portfolio"))}}}.call(this,s("hosL").h)}}]);
+//# sourceMappingURL=route-portfolio.chunk.34d86.esm.js.map

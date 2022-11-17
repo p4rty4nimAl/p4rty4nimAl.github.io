@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{"5+aR":function(n,o,s){"use strict";s.r(o),function(n){var t=s("hosL");s("9ZoI");o.default=class extends t.Component{render(){return n("div",null,n("p",null,"docs"))}}}.call(this,s("hosL").h)},"9ZoI":function(){"use strict"}}]);
+//# sourceMappingURL=route-docs.chunk.41c6a.esm.js.map
